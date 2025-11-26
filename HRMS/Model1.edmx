@@ -1,0 +1,1307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_dept">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Department_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documentName" Type="nvarchar" MaxLength="250" />
+          <Property Name="DocumentURL" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserType" Type="bigint" />
+          <Property Name="Parent" Type="bigint" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="icon" Type="nvarchar" MaxLength="250" />
+          <Property Name="Application_type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_email_server">
+          <Key>
+            <PropertyRef Name="email_id" />
+          </Key>
+          <Property Name="email_id" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="smtp_server" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="port" Type="bigint" />
+          <Property Name="status" Type="bit" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="encryption_method" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_emp_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_emp" Type="bigint" />
+          <Property Name="fk_emp_time_set" Type="bigint" />
+          <Property Name="date" Type="date" />
+          <Property Name="time" Type="time" Precision="7" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="inserteddatetime" Type="datetime" />
+          <Property Name="status" Type="bit" />
+          <Property Name="late" Type="bit" />
+          <Property Name="working_hours" Type="float" />
+          <Property Name="leave" Type="bit" />
+          <Property Name="month" Type="int" />
+          <Property Name="year" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_emp_grade">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empgrade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1500" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_emp_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="repeat_time" Type="int" Nullable="false" />
+          <Property Name="holiday_day" Type="int" />
+          <Property Name="holiday_date" Type="date" />
+          <Property Name="grade_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_emp_time_set">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_grade_id" Type="bigint" />
+          <Property Name="timeIN" Type="time" Precision="7" />
+          <Property Name="timeout" Type="time" Precision="7" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_Employe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CNIC" Type="nvarchar" MaxLength="50" />
+          <Property Name="FatherFullName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FatherCNIC" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dateofbirth" Type="date" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="Accomodation" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResidenceAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkEmail" Type="nvarchar" MaxLength="150" />
+          <Property Name="PersonalEmail" Type="nvarchar" MaxLength="150" />
+          <Property Name="HomeAddress1" Type="nvarchar" MaxLength="500" />
+          <Property Name="HomeAddress2" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmergencyContactName" Type="nvarchar" MaxLength="150" />
+          <Property Name="EmergencyRelation" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergencyHomePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergencyWorkPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergencyMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="inserteddatetime" Type="datetime" />
+          <Property Name="status" Type="bit" />
+          <Property Name="img_url" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="tbl_employee_conectivity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employe_fk" Type="bigint" />
+          <Property Name="Dept_fk" Type="bigint" />
+          <Property Name="SubDept_fk" Type="bigint" />
+          <Property Name="jobtitle_fk" Type="bigint" />
+          <Property Name="Joindate" Type="date" />
+          <Property Name="Confirmationdate" Type="date" />
+          <Property Name="grade_fk" Type="bigint" />
+          <Property Name="Supervisor_fk" Type="bigint" />
+          <Property Name="TerminationDate" Type="date" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid_fk" Type="bigint" />
+          <Property Name="fk_bank_details" Type="bigint" />
+          <Property Name="Emplyeestatus_fk" Type="bigint" />
+          <Property Name="ContractStartDate" Type="date" />
+          <Property Name="ContractEndDate" Type="date" />
+          <Property Name="inserteddatetime" Type="datetime" />
+          <Property Name="insertedby" Type="bigint" />
+          <Property Name="updatedatetime" Type="datetime" />
+          <Property Name="updateby" Type="bigint" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_employee_salary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_employee_id" Type="bigint" />
+          <Property Name="amount" Type="bigint" />
+          <Property Name="status" Type="bit" />
+          <Property Name="salary_component" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Employee_status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee_status_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_Employee_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_employeeleave">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_empid" Type="bigint" />
+          <Property Name="fk_leavetypeid" Type="bigint" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="weekly" Type="int" />
+          <Property Name="yearly" Type="int" />
+          <Property Name="one_time" Type="int" />
+          <Property Name="holiday_day" Type="int" />
+          <Property Name="holiday_date" Type="date" />
+          <Property Name="grade_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_holidays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="weekly" Type="bit" />
+          <Property Name="yearly" Type="bit" />
+          <Property Name="one_time" Type="bit" />
+          <Property Name="holiday_day" Type="int" />
+          <Property Name="holiday_date" Type="date" />
+          <Property Name="grade_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_job_descrion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Job_description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="salary_range_min" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="salary_range_max" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_leave_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="leave_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+          <Property Name="total_in_year" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_leaving_policy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Leavepolicy" Type="nvarchar" MaxLength="50" />
+          <Property Name="col_1" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="col_2" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="col_3" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="col_4" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="col_5" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="col_6" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="col_7" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Note" Type="nvarchar" MaxLength="250" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_loanpaidemp">
+          <Key>
+            <PropertyRef Name="loan_id" />
+          </Key>
+          <Property Name="loan_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" Nullable="false" />
+          <Property Name="loan_amount" Type="bigint" Nullable="false" />
+          <Property Name="payabletime_in_month" Type="int" Nullable="false" />
+          <Property Name="remaining_loan_amount" Type="int" Nullable="false" />
+          <Property Name="applied_from" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="char" MaxLength="10" />
+          <Property Name="payable_amount_per_month" Type="bigint" />
+          <Property Name="remaining_month_payable" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="User_type" Type="bigint" />
+          <Property Name="Desgination" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active_status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_noti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="fk_userid" Type="bigint" />
+          <Property Name="noti_content" Type="varchar" MaxLength="150" />
+          <Property Name="del_status" Type="bit" />
+          <Property Name="read_status" Type="bit" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_salary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_emp_id" Type="bigint" Nullable="false" />
+          <Property Name="salary_month" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="salary_year" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="stat_bonus" Type="float" />
+          <Property Name="gross_earning_amount" Type="float" Nullable="false" />
+          <Property Name="gross_deduction_amount" Type="float" Nullable="false" />
+          <Property Name="net_pay" Type="float" Nullable="false" />
+          <Property Name="inserted_by" Type="bigint" Nullable="false" />
+          <Property Name="slip_url" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_salary_components">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="salary_components" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_salary_detuction_policy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="late_detuction" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="absent_detuction" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="fk_emp_grade" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tbl_sub_dept">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sub_department_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_dept_id" Type="bigint" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_usertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usertype" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'hrms.dbo.tbl_world_city' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbl_world_city">
+          <Property Name="id" Type="bigint" />
+          <Property Name="world_city_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_country_id" Type="bigint" />
+        </EntityType>-->
+        <EntityType Name="tbl_world_country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="country_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__tbl_emplo__fk_em__6FE99F9F">
+          <End Role="tbl_Employe" Type="Self.tbl_Employe" Multiplicity="0..1" />
+          <End Role="tbl_employee_salary" Type="Self.tbl_employee_salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Employe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_employee_salary">
+              <PropertyRef Name="fk_employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_loanp__emp_i__49C3F6B7">
+          <End Role="tbl_Employe" Type="Self.tbl_Employe" Multiplicity="1" />
+          <End Role="tbl_loanpaidemp" Type="Self.tbl_loanpaidemp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Employe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_loanpaidemp">
+              <PropertyRef Name="emp_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_login_tbl_usertype">
+          <End Role="tbl_usertype" Type="Self.tbl_usertype" Multiplicity="0..1" />
+          <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_usertype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_login">
+              <PropertyRef Name="User_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_Employe_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="HRMSModelStoreContainer">
+          <EntitySet Name="tbl_dept" EntityType="Self.tbl_dept" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Document" EntityType="Self.tbl_Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_email_server" EntityType="Self.tbl_email_server" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_emp_attendance" EntityType="Self.tbl_emp_attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_emp_grade" EntityType="Self.tbl_emp_grade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_emp_holiday" EntityType="Self.tbl_emp_holiday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_emp_time_set" EntityType="Self.tbl_emp_time_set" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Employe" EntityType="Self.tbl_Employe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee_conectivity" EntityType="Self.tbl_employee_conectivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee_salary" EntityType="Self.tbl_employee_salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Employee_status" EntityType="Self.tbl_Employee_status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Employee_type" EntityType="Self.tbl_Employee_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employeeleave" EntityType="Self.tbl_employeeleave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_holiday" EntityType="Self.tbl_holiday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_holidays" EntityType="Self.tbl_holidays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_job_descrion" EntityType="Self.tbl_job_descrion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_leave_type" EntityType="Self.tbl_leave_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_leaving_policy" EntityType="Self.tbl_leaving_policy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_loanpaidemp" EntityType="Self.tbl_loanpaidemp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_login" EntityType="Self.tbl_login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_noti" EntityType="Self.tbl_noti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_salary" EntityType="Self.tbl_salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_salary_components" EntityType="Self.tbl_salary_components" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_salary_detuction_policy" EntityType="Self.tbl_salary_detuction_policy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_sub_dept" EntityType="Self.tbl_sub_dept" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_usertype" EntityType="Self.tbl_usertype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_world_country" EntityType="Self.tbl_world_country" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tbl_emplo__fk_em__6FE99F9F" Association="Self.FK__tbl_emplo__fk_em__6FE99F9F">
+            <End Role="tbl_Employe" EntitySet="tbl_Employe" />
+            <End Role="tbl_employee_salary" EntitySet="tbl_employee_salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_loanp__emp_i__49C3F6B7" Association="Self.FK__tbl_loanp__emp_i__49C3F6B7">
+            <End Role="tbl_Employe" EntitySet="tbl_Employe" />
+            <End Role="tbl_loanpaidemp" EntitySet="tbl_loanpaidemp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_login_tbl_usertype" Association="Self.FK_tbl_login_tbl_usertype">
+            <End Role="tbl_usertype" EntitySet="tbl_usertype" />
+            <End Role="tbl_login" EntitySet="tbl_login" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documentName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="Int64" />
+          <Property Name="Parent" Type="Int64" />
+          <Property Name="Sequence" Type="Int64" />
+          <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Application_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="User_type" Type="Int64" />
+          <Property Name="Desgination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active_status" Type="Boolean" />
+          <NavigationProperty Name="tbl_usertype" Relationship="Self.FK_tbl_login_tbl_usertype" FromRole="tbl_login" ToRole="tbl_usertype" />
+        </EntityType>
+        <EntityType Name="tbl_usertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <NavigationProperty Name="tbl_login" Relationship="Self.FK_tbl_login_tbl_usertype" FromRole="tbl_usertype" ToRole="tbl_login" />
+        </EntityType>
+        <Association Name="FK_tbl_login_tbl_usertype">
+          <End Role="tbl_usertype" Type="Self.tbl_usertype" Multiplicity="0..1" />
+          <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_usertype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_login">
+              <PropertyRef Name="User_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HRMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Document" EntityType="Self.tbl_Document" />
+          <EntitySet Name="tbl_login" EntityType="Self.tbl_login" />
+          <EntitySet Name="tbl_usertype" EntityType="Self.tbl_usertype" />
+          <AssociationSet Name="FK_tbl_login_tbl_usertype" Association="Self.FK_tbl_login_tbl_usertype">
+            <End Role="tbl_usertype" EntitySet="tbl_usertype" />
+            <End Role="tbl_login" EntitySet="tbl_login" />
+          </AssociationSet>
+          <EntitySet Name="tbl_dept" EntityType="HRMSModel.tbl_dept" />
+          <EntitySet Name="tbl_Employee_type" EntityType="HRMSModel.tbl_Employee_type" />
+          <EntitySet Name="tbl_sub_dept" EntityType="HRMSModel.tbl_sub_dept" />
+          <EntitySet Name="tbl_Employee_status" EntityType="HRMSModel.tbl_Employee_status" />
+          <EntitySet Name="tbl_job_descrion" EntityType="HRMSModel.tbl_job_descrion" />
+          <EntitySet Name="tbl_leave_type" EntityType="HRMSModel.tbl_leave_type" />
+          <EntitySet Name="tbl_salary_components" EntityType="HRMSModel.tbl_salary_components" />
+          <EntitySet Name="tbl_Employe" EntityType="HRMSModel.tbl_Employe" />
+          <EntitySet Name="tbl_leaving_policy" EntityType="HRMSModel.tbl_leaving_policy" />
+          <EntitySet Name="tbl_emp_grade" EntityType="HRMSModel.tbl_emp_grade" />
+          <EntitySet Name="tbl_employee_conectivity" EntityType="HRMSModel.tbl_employee_conectivity" />
+          <FunctionImport Name="SP_Employe_report" ReturnType="Collection(HRMSModel.SP_Employe_report_Result)" />
+          <EntitySet Name="tbl_emp_attendance" EntityType="HRMSModel.tbl_emp_attendance" />
+          <EntitySet Name="tbl_emp_time_set" EntityType="HRMSModel.tbl_emp_time_set" />
+          <EntitySet Name="tbl_employee_salary" EntityType="HRMSModel.tbl_employee_salary" />
+          <EntitySet Name="tbl_loanpaidemp" EntityType="HRMSModel.tbl_loanpaidemp" />
+          <EntitySet Name="tbl_world_country" EntityType="HRMSModel.tbl_world_country" />
+          <AssociationSet Name="FK__tbl_emplo__fk_em__6FE99F9F" Association="HRMSModel.FK__tbl_emplo__fk_em__6FE99F9F">
+            <End Role="tbl_Employe" EntitySet="tbl_Employe" />
+            <End Role="tbl_employee_salary" EntitySet="tbl_employee_salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_loanp__emp_i__49C3F6B7" Association="HRMSModel.FK__tbl_loanp__emp_i__49C3F6B7">
+            <End Role="tbl_Employe" EntitySet="tbl_Employe" />
+            <End Role="tbl_loanpaidemp" EntitySet="tbl_loanpaidemp" />
+          </AssociationSet>
+          <EntitySet Name="tbl_salary_detuction_policy" EntityType="HRMSModel.tbl_salary_detuction_policy" />
+          <EntitySet Name="tbl_salary" EntityType="HRMSModel.tbl_salary" />
+          <FunctionImport Name="SP_Employe_report1" ReturnType="Collection(HRMSModel.SP_Employe_report1_Result)" />
+          <EntitySet Name="tbl_employeeleave" EntityType="HRMSModel.tbl_employeeleave" />
+          <EntitySet Name="tbl_holiday" EntityType="HRMSModel.tbl_holiday" />
+          <EntitySet Name="tbl_holidays" EntityType="HRMSModel.tbl_holidays" />
+          <EntitySet Name="tbl_emp_holiday" EntityType="HRMSModel.tbl_emp_holiday" />
+          <FunctionImport Name="SP_Employe_report2" ReturnType="Collection(HRMSModel.SP_Employe_report2_Result)" />
+          <EntitySet Name="tbl_noti" EntityType="HRMSModel.tbl_noti" />
+          <EntitySet Name="tbl_email_server" EntityType="HRMSModel.tbl_email_server" />
+        </EntityContainer>
+        <EntityType Name="tbl_dept">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_Employee_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_sub_dept">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_department_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fk_dept_id" Type="Int64" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_Employee_status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee_status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_job_descrion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Job_description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="salary_range_min" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="salary_range_max" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_leave_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="leave_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="total_in_year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_salary_components">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="salary_components" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_Employe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FatherFullName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FatherCNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dateofbirth" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Accomodation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResidenceAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HomeAddress1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HomeAddress2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyContactName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyRelation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyHomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyWorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inserteddatetime" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" />
+          <NavigationProperty Name="tbl_employee_salary" Relationship="HRMSModel.FK__tbl_emplo__fk_em__6FE99F9F" FromRole="tbl_Employe" ToRole="tbl_employee_salary" />
+          <NavigationProperty Name="tbl_loanpaidemp" Relationship="HRMSModel.FK__tbl_loanp__emp_i__49C3F6B7" FromRole="tbl_Employe" ToRole="tbl_loanpaidemp" />
+          <Property Name="img_url" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_leaving_policy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Leavepolicy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="col_1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="col_2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="col_3" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="col_4" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="col_5" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="col_6" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="col_7" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_emp_grade">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empgrade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_employee_conectivity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employe_fk" Type="Int64" />
+          <Property Name="Dept_fk" Type="Int64" />
+          <Property Name="SubDept_fk" Type="Int64" />
+          <Property Name="jobtitle_fk" Type="Int64" />
+          <Property Name="Joindate" Type="DateTime" Precision="0" />
+          <Property Name="Confirmationdate" Type="DateTime" Precision="0" />
+          <Property Name="grade_fk" Type="Int64" />
+          <Property Name="Supervisor_fk" Type="Int64" />
+          <Property Name="TerminationDate" Type="DateTime" Precision="0" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="fk_bank_details" Type="Int64" />
+          <Property Name="Emplyeestatus_fk" Type="Int64" />
+          <Property Name="ContractStartDate" Type="DateTime" Precision="0" />
+          <Property Name="ContractEndDate" Type="DateTime" Precision="0" />
+          <Property Name="inserteddatetime" Type="DateTime" Precision="3" />
+          <Property Name="insertedby" Type="Int64" />
+          <Property Name="updatedatetime" Type="DateTime" Precision="3" />
+          <Property Name="updateby" Type="Int64" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="userid_fk" Type="Int64" />
+        </EntityType>
+        <ComplexType Name="SP_Employe_report_Result">
+          <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="252" />
+          <Property Type="String" Name="CNIC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FatherFullName" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ResidenceAddress" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PersonalEmail" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Department_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sub_department_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Empgrade" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Leavepolicy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Employee_status_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SuperVioserName" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <EntityType Name="tbl_emp_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_emp" Type="Int64" />
+          <Property Name="fk_emp_time_set" Type="Int64" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inserteddatetime" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="late" Type="Boolean" />
+          <Property Name="working_hours" Type="Double" />
+          <Property Name="leave" Type="Boolean" />
+          <Property Name="month" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_emp_time_set">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeIN" Type="Time" Precision="7" />
+          <Property Name="timeout" Type="Time" Precision="7" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="fk_grade_id" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tbl_employee_salary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_employee_id" Type="Int64" />
+          <Property Name="amount" Type="Int64" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="salary_component" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_Employe" Relationship="HRMSModel.FK__tbl_emplo__fk_em__6FE99F9F" FromRole="tbl_employee_salary" ToRole="tbl_Employe" />
+        </EntityType>
+        <EntityType Name="tbl_loanpaidemp">
+          <Key>
+            <PropertyRef Name="loan_id" />
+          </Key>
+          <Property Name="loan_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" Nullable="false" />
+          <Property Name="loan_amount" Type="Int64" Nullable="false" />
+          <Property Name="payabletime_in_month" Type="Int32" Nullable="false" />
+          <Property Name="remaining_loan_amount" Type="Int32" Nullable="false" />
+          <Property Name="applied_from" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="payable_amount_per_month" Type="Int64" />
+          <NavigationProperty Name="tbl_Employe" Relationship="HRMSModel.FK__tbl_loanp__emp_i__49C3F6B7" FromRole="tbl_loanpaidemp" ToRole="tbl_Employe" />
+          <Property Name="remaining_month_payable" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_world_country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="country_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__tbl_emplo__fk_em__6FE99F9F">
+          <End Type="HRMSModel.tbl_Employe" Role="tbl_Employe" Multiplicity="0..1" />
+          <End Type="HRMSModel.tbl_employee_salary" Role="tbl_employee_salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Employe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_employee_salary">
+              <PropertyRef Name="fk_employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_loanp__emp_i__49C3F6B7">
+          <End Type="HRMSModel.tbl_Employe" Role="tbl_Employe" Multiplicity="1" />
+          <End Type="HRMSModel.tbl_loanpaidemp" Role="tbl_loanpaidemp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Employe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_loanpaidemp">
+              <PropertyRef Name="emp_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_salary_detuction_policy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="late_detuction" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="absent_detuction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="fk_emp_grade" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tbl_salary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_emp_id" Type="Int64" Nullable="false" />
+          <Property Name="salary_month" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="salary_year" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="stat_bonus" Type="Double" />
+          <Property Name="gross_earning_amount" Type="Double" Nullable="false" />
+          <Property Name="gross_deduction_amount" Type="Double" Nullable="false" />
+          <Property Name="net_pay" Type="Double" Nullable="false" />
+          <Property Name="inserted_by" Type="Int64" Nullable="false" />
+          <Property Name="slip_url" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="SP_Employe_report1_Result">
+          <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="252" />
+          <Property Type="String" Name="CNIC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FatherFullName" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ResidenceAddress" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PersonalEmail" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Department_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sub_department_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Empgrade" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Employee_status_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SuperVioserName" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <EntityType Name="tbl_employeeleave">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_empid" Type="Int64" />
+          <Property Name="fk_leavetypeid" Type="Int64" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="weekly" Type="Int32" />
+          <Property Name="yearly" Type="Int32" />
+          <Property Name="one_time" Type="Int32" />
+          <Property Name="holiday_day" Type="Int32" />
+          <Property Name="holiday_date" Type="DateTime" Precision="0" />
+          <Property Name="grade_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_holidays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="weekly" Type="Boolean" />
+          <Property Name="yearly" Type="Boolean" />
+          <Property Name="one_time" Type="Boolean" />
+          <Property Name="holiday_day" Type="Int32" />
+          <Property Name="holiday_date" Type="DateTime" Precision="0" />
+          <Property Name="grade_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_emp_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="repeat_time" Type="Int32" Nullable="false" />
+          <Property Name="holiday_day" Type="Int32" />
+          <Property Name="holiday_date" Type="DateTime" Precision="0" />
+          <Property Name="grade_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="SP_Employe_report2_Result">
+          <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="252" />
+          <Property Type="String" Name="CNIC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FatherFullName" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ResidenceAddress" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PersonalEmail" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Department_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sub_department_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Empgrade" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Employee_status_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SuperVioserName" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <EntityType Name="tbl_noti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="fk_userid" Type="Int64" />
+          <Property Name="noti_content" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="del_status" Type="Boolean" />
+          <Property Name="read_status" Type="Boolean" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tbl_email_server">
+          <Key>
+            <PropertyRef Name="email_id" />
+          </Key>
+          <Property Name="email_id" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="smtp_server" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="port" Type="Int64" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="encryption_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSEntities">
+    <EntitySetMapping Name="tbl_Document">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Document)">
+        <MappingFragment StoreEntitySet="tbl_Document">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="documentName" ColumnName="documentName" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="Application_type" ColumnName="Application_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_login">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_login)">
+        <MappingFragment StoreEntitySet="tbl_login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User_type" ColumnName="User_type" />
+          <ScalarProperty Name="Desgination" ColumnName="Desgination" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Active_status" ColumnName="Active_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usertype">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_usertype)">
+        <MappingFragment StoreEntitySet="tbl_usertype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_dept">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_dept)">
+        <MappingFragment StoreEntitySet="tbl_dept">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Department_name" ColumnName="Department_name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee_type">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Employee_type)">
+        <MappingFragment StoreEntitySet="tbl_Employee_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Emp_type_name" ColumnName="Emp_type_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sub_dept">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_sub_dept)">
+        <MappingFragment StoreEntitySet="tbl_sub_dept">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Sub_department_name" ColumnName="Sub_department_name" />
+          <ScalarProperty Name="fk_dept_id" ColumnName="fk_dept_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee_status">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Employee_status)">
+        <MappingFragment StoreEntitySet="tbl_Employee_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Employee_status_name" ColumnName="Employee_status_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_job_descrion">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_job_descrion)">
+        <MappingFragment StoreEntitySet="tbl_job_descrion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Job_description" ColumnName="Job_description" />
+          <ScalarProperty Name="salary_range_min" ColumnName="salary_range_min" />
+          <ScalarProperty Name="salary_range_max" ColumnName="salary_range_max" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_leave_type">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_leave_type)">
+        <MappingFragment StoreEntitySet="tbl_leave_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="leave_type_name" ColumnName="leave_type_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="total_in_year" ColumnName="total_in_year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_salary_components">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_salary_components)">
+        <MappingFragment StoreEntitySet="tbl_salary_components">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="salary_components" ColumnName="salary_components" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employe">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Employe)">
+        <MappingFragment StoreEntitySet="tbl_Employe">
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+                <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="FatherFullName" ColumnName="FatherFullName" />
+          <ScalarProperty Name="FatherCNIC" ColumnName="FatherCNIC" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Accomodation" ColumnName="Accomodation" />
+          <ScalarProperty Name="ResidenceAddress" ColumnName="ResidenceAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="WorkEmail" ColumnName="WorkEmail" />
+          <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+          <ScalarProperty Name="HomeAddress1" ColumnName="HomeAddress1" />
+          <ScalarProperty Name="HomeAddress2" ColumnName="HomeAddress2" />
+          <ScalarProperty Name="EmergencyContactName" ColumnName="EmergencyContactName" />
+          <ScalarProperty Name="EmergencyRelation" ColumnName="EmergencyRelation" />
+          <ScalarProperty Name="EmergencyHomePhone" ColumnName="EmergencyHomePhone" />
+          <ScalarProperty Name="EmergencyWorkPhone" ColumnName="EmergencyWorkPhone" />
+          <ScalarProperty Name="EmergencyMobile" ColumnName="EmergencyMobile" />
+          <ScalarProperty Name="inserteddatetime" ColumnName="inserteddatetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_leaving_policy">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_leaving_policy)">
+        <MappingFragment StoreEntitySet="tbl_leaving_policy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Leavepolicy" ColumnName="Leavepolicy" />
+          <ScalarProperty Name="col_1" ColumnName="col_1" />
+          <ScalarProperty Name="col_2" ColumnName="col_2" />
+          <ScalarProperty Name="col_3" ColumnName="col_3" />
+          <ScalarProperty Name="col_4" ColumnName="col_4" />
+          <ScalarProperty Name="col_5" ColumnName="col_5" />
+          <ScalarProperty Name="col_6" ColumnName="col_6" />
+          <ScalarProperty Name="col_7" ColumnName="col_7" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_grade">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_grade)">
+        <MappingFragment StoreEntitySet="tbl_emp_grade">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Empgrade" ColumnName="Empgrade" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_conectivity">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_employee_conectivity)">
+        <MappingFragment StoreEntitySet="tbl_employee_conectivity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employe_fk" ColumnName="employe_fk" />
+          <ScalarProperty Name="Dept_fk" ColumnName="Dept_fk" />
+          <ScalarProperty Name="SubDept_fk" ColumnName="SubDept_fk" />
+          <ScalarProperty Name="jobtitle_fk" ColumnName="jobtitle_fk" />
+          <ScalarProperty Name="Joindate" ColumnName="Joindate" />
+          <ScalarProperty Name="Confirmationdate" ColumnName="Confirmationdate" />
+          <ScalarProperty Name="grade_fk" ColumnName="grade_fk" />
+          <ScalarProperty Name="Supervisor_fk" ColumnName="Supervisor_fk" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="fk_bank_details" ColumnName="fk_bank_details" />
+          <ScalarProperty Name="Emplyeestatus_fk" ColumnName="Emplyeestatus_fk" />
+          <ScalarProperty Name="ContractStartDate" ColumnName="ContractStartDate" />
+          <ScalarProperty Name="ContractEndDate" ColumnName="ContractEndDate" />
+          <ScalarProperty Name="inserteddatetime" ColumnName="inserteddatetime" />
+          <ScalarProperty Name="insertedby" ColumnName="insertedby" />
+          <ScalarProperty Name="updatedatetime" ColumnName="updatedatetime" />
+          <ScalarProperty Name="updateby" ColumnName="updateby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="userid_fk" ColumnName="userid_fk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_attendance">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_attendance)">
+        <MappingFragment StoreEntitySet="tbl_emp_attendance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_emp" ColumnName="fk_emp" />
+          <ScalarProperty Name="fk_emp_time_set" ColumnName="fk_emp_time_set" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="inserteddatetime" ColumnName="inserteddatetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="late" ColumnName="late" />
+          <ScalarProperty Name="working_hours" ColumnName="working_hours" />
+          <ScalarProperty Name="leave" ColumnName="leave" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_time_set">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_time_set)">
+        <MappingFragment StoreEntitySet="tbl_emp_time_set">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeIN" ColumnName="timeIN" />
+          <ScalarProperty Name="timeout" ColumnName="timeout" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fk_grade_id" ColumnName="fk_grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_salary">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_employee_salary)">
+        <MappingFragment StoreEntitySet="tbl_employee_salary">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_employee_id" ColumnName="fk_employee_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="salary_component" ColumnName="salary_component" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_loanpaidemp">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_loanpaidemp)">
+        <MappingFragment StoreEntitySet="tbl_loanpaidemp">
+          <ScalarProperty Name="loan_id" ColumnName="loan_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="loan_amount" ColumnName="loan_amount" />
+          <ScalarProperty Name="payabletime_in_month" ColumnName="payabletime_in_month" />
+          <ScalarProperty Name="remaining_loan_amount" ColumnName="remaining_loan_amount" />
+          <ScalarProperty Name="applied_from" ColumnName="applied_from" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="payable_amount_per_month" ColumnName="payable_amount_per_month" />
+          <ScalarProperty Name="remaining_month_payable" ColumnName="remaining_month_payable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_world_country">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_world_country)">
+        <MappingFragment StoreEntitySet="tbl_world_country">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_salary_detuction_policy">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_salary_detuction_policy)">
+        <MappingFragment StoreEntitySet="tbl_salary_detuction_policy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="late_detuction" ColumnName="late_detuction" />
+          <ScalarProperty Name="absent_detuction" ColumnName="absent_detuction" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="fk_emp_grade" ColumnName="fk_emp_grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_salary">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_salary)">
+        <MappingFragment StoreEntitySet="tbl_salary">
+          <ScalarProperty Name="slip_url" ColumnName="slip_url" />
+                <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_emp_id" ColumnName="fk_emp_id" />
+          <ScalarProperty Name="salary_month" ColumnName="salary_month" />
+          <ScalarProperty Name="salary_year" ColumnName="salary_year" />
+          <ScalarProperty Name="stat_bonus" ColumnName="stat_bonus" />
+          <ScalarProperty Name="gross_earning_amount" ColumnName="gross_earning_amount" />
+          <ScalarProperty Name="gross_deduction_amount" ColumnName="gross_deduction_amount" />
+          <ScalarProperty Name="net_pay" ColumnName="net_pay" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employeeleave">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_employeeleave)">
+        <MappingFragment StoreEntitySet="tbl_employeeleave">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_empid" ColumnName="fk_empid" />
+          <ScalarProperty Name="fk_leavetypeid" ColumnName="fk_leavetypeid" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_holiday">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_holiday)">
+        <MappingFragment StoreEntitySet="tbl_holiday">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="weekly" ColumnName="weekly" />
+          <ScalarProperty Name="yearly" ColumnName="yearly" />
+          <ScalarProperty Name="one_time" ColumnName="one_time" />
+          <ScalarProperty Name="holiday_day" ColumnName="holiday_day" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_holidays">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_holidays)">
+        <MappingFragment StoreEntitySet="tbl_holidays">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="weekly" ColumnName="weekly" />
+          <ScalarProperty Name="yearly" ColumnName="yearly" />
+          <ScalarProperty Name="one_time" ColumnName="one_time" />
+          <ScalarProperty Name="holiday_day" ColumnName="holiday_day" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_holiday">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_holiday)">
+        <MappingFragment StoreEntitySet="tbl_emp_holiday">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="repeat_time" ColumnName="repeat_time" />
+          <ScalarProperty Name="holiday_day" ColumnName="holiday_day" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_Employe_report2" FunctionName="HRMSModel.Store.SP_Employe_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HRMSModel.SP_Employe_report2_Result">
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="FatherFullName" ColumnName="FatherFullName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="ResidenceAddress" ColumnName="ResidenceAddress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="Department_name" ColumnName="Department_name" />
+                <ScalarProperty Name="Sub_department_name" ColumnName="Sub_department_name" />
+                <ScalarProperty Name="Empgrade" ColumnName="Empgrade" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="Employee_status_name" ColumnName="Employee_status_name" />
+                <ScalarProperty Name="SuperVioserName" ColumnName="SuperVioserName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_noti">
+            <EntityTypeMapping TypeName="HRMSModel.tbl_noti">
+              <MappingFragment StoreEntitySet="tbl_noti">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="read_status" ColumnName="read_status" />
+                <ScalarProperty Name="del_status" ColumnName="del_status" />
+                <ScalarProperty Name="noti_content" ColumnName="noti_content" />
+                <ScalarProperty Name="fk_userid" ColumnName="fk_userid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_email_server">
+            <EntityTypeMapping TypeName="HRMSModel.tbl_email_server">
+              <MappingFragment StoreEntitySet="tbl_email_server">
+                <ScalarProperty Name="encryption_method" ColumnName="encryption_method" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="port" ColumnName="port" />
+                <ScalarProperty Name="smtp_server" ColumnName="smtp_server" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email_id" ColumnName="email_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

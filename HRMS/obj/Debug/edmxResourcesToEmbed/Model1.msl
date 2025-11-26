@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSEntities">
+    <EntitySetMapping Name="tbl_Document">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Document)">
+        <MappingFragment StoreEntitySet="tbl_Document">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="documentName" ColumnName="documentName" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="Application_type" ColumnName="Application_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_login">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_login)">
+        <MappingFragment StoreEntitySet="tbl_login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User_type" ColumnName="User_type" />
+          <ScalarProperty Name="Desgination" ColumnName="Desgination" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Active_status" ColumnName="Active_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usertype">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_usertype)">
+        <MappingFragment StoreEntitySet="tbl_usertype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_dept">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_dept)">
+        <MappingFragment StoreEntitySet="tbl_dept">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Department_name" ColumnName="Department_name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee_type">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Employee_type)">
+        <MappingFragment StoreEntitySet="tbl_Employee_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Emp_type_name" ColumnName="Emp_type_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sub_dept">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_sub_dept)">
+        <MappingFragment StoreEntitySet="tbl_sub_dept">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Sub_department_name" ColumnName="Sub_department_name" />
+          <ScalarProperty Name="fk_dept_id" ColumnName="fk_dept_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee_status">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Employee_status)">
+        <MappingFragment StoreEntitySet="tbl_Employee_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Employee_status_name" ColumnName="Employee_status_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_job_descrion">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_job_descrion)">
+        <MappingFragment StoreEntitySet="tbl_job_descrion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Job_description" ColumnName="Job_description" />
+          <ScalarProperty Name="salary_range_min" ColumnName="salary_range_min" />
+          <ScalarProperty Name="salary_range_max" ColumnName="salary_range_max" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_leave_type">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_leave_type)">
+        <MappingFragment StoreEntitySet="tbl_leave_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="leave_type_name" ColumnName="leave_type_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="total_in_year" ColumnName="total_in_year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_salary_components">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_salary_components)">
+        <MappingFragment StoreEntitySet="tbl_salary_components">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="salary_components" ColumnName="salary_components" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employe">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_Employe)">
+        <MappingFragment StoreEntitySet="tbl_Employe">
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="FatherFullName" ColumnName="FatherFullName" />
+          <ScalarProperty Name="FatherCNIC" ColumnName="FatherCNIC" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Accomodation" ColumnName="Accomodation" />
+          <ScalarProperty Name="ResidenceAddress" ColumnName="ResidenceAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="WorkEmail" ColumnName="WorkEmail" />
+          <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+          <ScalarProperty Name="HomeAddress1" ColumnName="HomeAddress1" />
+          <ScalarProperty Name="HomeAddress2" ColumnName="HomeAddress2" />
+          <ScalarProperty Name="EmergencyContactName" ColumnName="EmergencyContactName" />
+          <ScalarProperty Name="EmergencyRelation" ColumnName="EmergencyRelation" />
+          <ScalarProperty Name="EmergencyHomePhone" ColumnName="EmergencyHomePhone" />
+          <ScalarProperty Name="EmergencyWorkPhone" ColumnName="EmergencyWorkPhone" />
+          <ScalarProperty Name="EmergencyMobile" ColumnName="EmergencyMobile" />
+          <ScalarProperty Name="inserteddatetime" ColumnName="inserteddatetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_leaving_policy">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_leaving_policy)">
+        <MappingFragment StoreEntitySet="tbl_leaving_policy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Leavepolicy" ColumnName="Leavepolicy" />
+          <ScalarProperty Name="col_1" ColumnName="col_1" />
+          <ScalarProperty Name="col_2" ColumnName="col_2" />
+          <ScalarProperty Name="col_3" ColumnName="col_3" />
+          <ScalarProperty Name="col_4" ColumnName="col_4" />
+          <ScalarProperty Name="col_5" ColumnName="col_5" />
+          <ScalarProperty Name="col_6" ColumnName="col_6" />
+          <ScalarProperty Name="col_7" ColumnName="col_7" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_grade">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_grade)">
+        <MappingFragment StoreEntitySet="tbl_emp_grade">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Empgrade" ColumnName="Empgrade" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_conectivity">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_employee_conectivity)">
+        <MappingFragment StoreEntitySet="tbl_employee_conectivity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employe_fk" ColumnName="employe_fk" />
+          <ScalarProperty Name="Dept_fk" ColumnName="Dept_fk" />
+          <ScalarProperty Name="SubDept_fk" ColumnName="SubDept_fk" />
+          <ScalarProperty Name="jobtitle_fk" ColumnName="jobtitle_fk" />
+          <ScalarProperty Name="Joindate" ColumnName="Joindate" />
+          <ScalarProperty Name="Confirmationdate" ColumnName="Confirmationdate" />
+          <ScalarProperty Name="grade_fk" ColumnName="grade_fk" />
+          <ScalarProperty Name="Supervisor_fk" ColumnName="Supervisor_fk" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="fk_bank_details" ColumnName="fk_bank_details" />
+          <ScalarProperty Name="Emplyeestatus_fk" ColumnName="Emplyeestatus_fk" />
+          <ScalarProperty Name="ContractStartDate" ColumnName="ContractStartDate" />
+          <ScalarProperty Name="ContractEndDate" ColumnName="ContractEndDate" />
+          <ScalarProperty Name="inserteddatetime" ColumnName="inserteddatetime" />
+          <ScalarProperty Name="insertedby" ColumnName="insertedby" />
+          <ScalarProperty Name="updatedatetime" ColumnName="updatedatetime" />
+          <ScalarProperty Name="updateby" ColumnName="updateby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="userid_fk" ColumnName="userid_fk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_attendance">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_attendance)">
+        <MappingFragment StoreEntitySet="tbl_emp_attendance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_emp" ColumnName="fk_emp" />
+          <ScalarProperty Name="fk_emp_time_set" ColumnName="fk_emp_time_set" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="inserteddatetime" ColumnName="inserteddatetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="late" ColumnName="late" />
+          <ScalarProperty Name="working_hours" ColumnName="working_hours" />
+          <ScalarProperty Name="leave" ColumnName="leave" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_time_set">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_time_set)">
+        <MappingFragment StoreEntitySet="tbl_emp_time_set">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timeIN" ColumnName="timeIN" />
+          <ScalarProperty Name="timeout" ColumnName="timeout" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fk_grade_id" ColumnName="fk_grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_salary">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_employee_salary)">
+        <MappingFragment StoreEntitySet="tbl_employee_salary">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_employee_id" ColumnName="fk_employee_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="salary_component" ColumnName="salary_component" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_loanpaidemp">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_loanpaidemp)">
+        <MappingFragment StoreEntitySet="tbl_loanpaidemp">
+          <ScalarProperty Name="loan_id" ColumnName="loan_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="loan_amount" ColumnName="loan_amount" />
+          <ScalarProperty Name="payabletime_in_month" ColumnName="payabletime_in_month" />
+          <ScalarProperty Name="remaining_loan_amount" ColumnName="remaining_loan_amount" />
+          <ScalarProperty Name="applied_from" ColumnName="applied_from" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="payable_amount_per_month" ColumnName="payable_amount_per_month" />
+          <ScalarProperty Name="remaining_month_payable" ColumnName="remaining_month_payable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_world_country">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_world_country)">
+        <MappingFragment StoreEntitySet="tbl_world_country">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_salary_detuction_policy">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_salary_detuction_policy)">
+        <MappingFragment StoreEntitySet="tbl_salary_detuction_policy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="late_detuction" ColumnName="late_detuction" />
+          <ScalarProperty Name="absent_detuction" ColumnName="absent_detuction" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="fk_emp_grade" ColumnName="fk_emp_grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_salary">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_salary)">
+        <MappingFragment StoreEntitySet="tbl_salary">
+          <ScalarProperty Name="slip_url" ColumnName="slip_url" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_emp_id" ColumnName="fk_emp_id" />
+          <ScalarProperty Name="salary_month" ColumnName="salary_month" />
+          <ScalarProperty Name="salary_year" ColumnName="salary_year" />
+          <ScalarProperty Name="stat_bonus" ColumnName="stat_bonus" />
+          <ScalarProperty Name="gross_earning_amount" ColumnName="gross_earning_amount" />
+          <ScalarProperty Name="gross_deduction_amount" ColumnName="gross_deduction_amount" />
+          <ScalarProperty Name="net_pay" ColumnName="net_pay" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employeeleave">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_employeeleave)">
+        <MappingFragment StoreEntitySet="tbl_employeeleave">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_empid" ColumnName="fk_empid" />
+          <ScalarProperty Name="fk_leavetypeid" ColumnName="fk_leavetypeid" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_holiday">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_holiday)">
+        <MappingFragment StoreEntitySet="tbl_holiday">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="weekly" ColumnName="weekly" />
+          <ScalarProperty Name="yearly" ColumnName="yearly" />
+          <ScalarProperty Name="one_time" ColumnName="one_time" />
+          <ScalarProperty Name="holiday_day" ColumnName="holiday_day" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_holidays">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_holidays)">
+        <MappingFragment StoreEntitySet="tbl_holidays">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="weekly" ColumnName="weekly" />
+          <ScalarProperty Name="yearly" ColumnName="yearly" />
+          <ScalarProperty Name="one_time" ColumnName="one_time" />
+          <ScalarProperty Name="holiday_day" ColumnName="holiday_day" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_emp_holiday">
+      <EntityTypeMapping TypeName="IsTypeOf(HRMSModel.tbl_emp_holiday)">
+        <MappingFragment StoreEntitySet="tbl_emp_holiday">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="repeat_time" ColumnName="repeat_time" />
+          <ScalarProperty Name="holiday_day" ColumnName="holiday_day" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_Employe_report2" FunctionName="HRMSModel.Store.SP_Employe_report">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRMSModel.SP_Employe_report2_Result">
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="FatherFullName" ColumnName="FatherFullName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="ResidenceAddress" ColumnName="ResidenceAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Department_name" ColumnName="Department_name" />
+          <ScalarProperty Name="Sub_department_name" ColumnName="Sub_department_name" />
+          <ScalarProperty Name="Empgrade" ColumnName="Empgrade" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Employee_status_name" ColumnName="Employee_status_name" />
+          <ScalarProperty Name="SuperVioserName" ColumnName="SuperVioserName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_noti">
+      <EntityTypeMapping TypeName="HRMSModel.tbl_noti">
+        <MappingFragment StoreEntitySet="tbl_noti">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="read_status" ColumnName="read_status" />
+          <ScalarProperty Name="del_status" ColumnName="del_status" />
+          <ScalarProperty Name="noti_content" ColumnName="noti_content" />
+          <ScalarProperty Name="fk_userid" ColumnName="fk_userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_email_server">
+      <EntityTypeMapping TypeName="HRMSModel.tbl_email_server">
+        <MappingFragment StoreEntitySet="tbl_email_server">
+          <ScalarProperty Name="encryption_method" ColumnName="encryption_method" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="smtp_server" ColumnName="smtp_server" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

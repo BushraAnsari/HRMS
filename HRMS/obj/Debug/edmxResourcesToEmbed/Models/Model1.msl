@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSEntities">
+    <EntitySetMapping Name="tbl_Document">
+      <EntityTypeMapping TypeName="HRMSModel.tbl_Document">
+        <MappingFragment StoreEntitySet="tbl_Document">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="documentName" ColumnName="documentName" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_login">
+      <EntityTypeMapping TypeName="HRMSModel.tbl_login">
+        <MappingFragment StoreEntitySet="tbl_login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User_type" ColumnName="User_type" />
+          <ScalarProperty Name="Desgination" ColumnName="Desgination" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Active_status" ColumnName="Active_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usertype">
+      <EntityTypeMapping TypeName="HRMSModel.tbl_usertype">
+        <MappingFragment StoreEntitySet="tbl_usertype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

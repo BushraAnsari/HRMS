@@ -1,0 +1,163 @@
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\ApplicationInsights.config
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\csc.exe
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\vbc.exe
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\HRMS.dll.config
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\HRMS.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\HRMS.pdb
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\EntityFramework.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.Web.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.ApplicationInsights.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\EntityFramework.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.Web.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.ApplicationInsights.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\obj\Debug\HRMS.dll
+c:\users\owais ansari\documents\visual studio 2015\Projects\HRMS\HRMS\obj\Debug\HRMS.pdb
+C:\Users\OWAIS ANSARI\Documents\Visual Studio 2015\Projects\HRMS\HRMS\obj\Debug\HRMS.csprojResolveAssemblyReference.cache
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\ApplicationInsights.config
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\csc.exe
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\vbc.exe
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\HRMS.dll.config
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\HRMS.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\HRMS.pdb
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\EntityFramework.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.Agent.Intercept.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.Web.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.ApplicationInsights.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\EntityFramework.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.Web.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.ApplicationInsights.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Downloads\HRMS_new\HRMS\HRMS\obj\Debug\HRMS.csprojAssemblyReference.cache
+G:\Downloads\HRMS_new\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+G:\Downloads\HRMS_new\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete
+G:\Downloads\HRMS_new\HRMS\HRMS\obj\Debug\HRMS.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\obj\Debug\HRMS.pdb
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\BouncyCastle.Crypto.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\itextsharp.dll
+G:\Downloads\HRMS_new\HRMS\HRMS\bin\itextsharp.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\ApplicationInsights.config
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\csc.exe
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\vbc.exe
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\HRMS.dll.config
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\HRMS.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\HRMS.pdb
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\BouncyCastle.Crypto.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\itextsharp.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.Agent.Intercept.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.Web.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.ApplicationInsights.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\itextsharp.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.Web.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.ApplicationInsights.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.csprojAssemblyReference.cache
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.dll
+G:\Downloads\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.pdb
+E:\HRMS_new - Copy\HRMS\HRMS\bin\ApplicationInsights.config
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\csc.exe
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\vbc.exe
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+E:\HRMS_new - Copy\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+E:\HRMS_new - Copy\HRMS\HRMS\bin\HRMS.dll.config
+E:\HRMS_new - Copy\HRMS\HRMS\bin\HRMS.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\HRMS.pdb
+E:\HRMS_new - Copy\HRMS\HRMS\bin\BouncyCastle.Crypto.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\itextsharp.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.Agent.Intercept.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.Web.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.ApplicationInsights.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\itextsharp.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.DependencyCollector.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.Web.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.AI.WindowsServer.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.ApplicationInsights.xml
+E:\HRMS_new - Copy\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.csprojAssemblyReference.cache
+E:\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+E:\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete
+E:\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.dll
+E:\HRMS_new - Copy\HRMS\HRMS\obj\Debug\HRMS.pdb

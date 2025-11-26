@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentName" Type="nvarchar" MaxLength="250" />
+    <Property Name="DocumentURL" Type="nvarchar" MaxLength="250" />
+    <Property Name="UserType" Type="bigint" />
+    <Property Name="Parent" Type="bigint" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tbl_login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="User_type" Type="bigint" />
+    <Property Name="Desgination" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active_status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_usertype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usertype" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <Association Name="FK_tbl_login_tbl_usertype">
+    <End Role="tbl_usertype" Type="Self.tbl_usertype" Multiplicity="0..1" />
+    <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usertype">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_login">
+        <PropertyRef Name="User_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRMSModelStoreContainer">
+    <EntitySet Name="tbl_Document" EntityType="Self.tbl_Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_login" EntityType="Self.tbl_login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_usertype" EntityType="Self.tbl_usertype" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_login_tbl_usertype" Association="Self.FK_tbl_login_tbl_usertype">
+      <End Role="tbl_usertype" EntitySet="tbl_usertype" />
+      <End Role="tbl_login" EntitySet="tbl_login" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

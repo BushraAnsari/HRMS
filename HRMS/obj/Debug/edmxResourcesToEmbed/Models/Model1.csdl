@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="documentName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="UserType" Type="Int64" />
+    <Property Name="Parent" Type="Int64" />
+    <Property Name="Sequence" Type="Int64" />
+    <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="User_type" Type="Int64" />
+    <Property Name="Desgination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active_status" Type="Boolean" />
+    <NavigationProperty Name="tbl_usertype" Relationship="Self.FK_tbl_login_tbl_usertype" FromRole="tbl_login" ToRole="tbl_usertype" />
+  </EntityType>
+  <EntityType Name="tbl_usertype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="tbl_login" Relationship="Self.FK_tbl_login_tbl_usertype" FromRole="tbl_usertype" ToRole="tbl_login" />
+  </EntityType>
+  <Association Name="FK_tbl_login_tbl_usertype">
+    <End Role="tbl_usertype" Type="Self.tbl_usertype" Multiplicity="0..1" />
+    <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usertype">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_login">
+        <PropertyRef Name="User_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Document" EntityType="Self.tbl_Document" />
+    <EntitySet Name="tbl_login" EntityType="Self.tbl_login" />
+    <EntitySet Name="tbl_usertype" EntityType="Self.tbl_usertype" />
+    <AssociationSet Name="FK_tbl_login_tbl_usertype" Association="Self.FK_tbl_login_tbl_usertype">
+      <End Role="tbl_usertype" EntitySet="tbl_usertype" />
+      <End Role="tbl_login" EntitySet="tbl_login" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

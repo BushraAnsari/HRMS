@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_dept">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentName" Type="nvarchar" MaxLength="250" />
+    <Property Name="DocumentURL" Type="nvarchar" MaxLength="250" />
+    <Property Name="UserType" Type="bigint" />
+    <Property Name="Parent" Type="bigint" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" />
+    <Property Name="Application_type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_email_server">
+    <Key>
+      <PropertyRef Name="email_id" />
+    </Key>
+    <Property Name="email_id" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="smtp_server" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="port" Type="bigint" />
+    <Property Name="status" Type="bit" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" />
+    <Property Name="encryption_method" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_emp_attendance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_emp" Type="bigint" />
+    <Property Name="fk_emp_time_set" Type="bigint" />
+    <Property Name="date" Type="date" />
+    <Property Name="time" Type="time" Precision="7" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="inserteddatetime" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="late" Type="bit" />
+    <Property Name="working_hours" Type="float" />
+    <Property Name="leave" Type="bit" />
+    <Property Name="month" Type="int" />
+    <Property Name="year" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_emp_grade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empgrade" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1500" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_emp_holiday">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="repeat_time" Type="int" Nullable="false" />
+    <Property Name="holiday_day" Type="int" />
+    <Property Name="holiday_date" Type="date" />
+    <Property Name="grade_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_emp_time_set">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_grade_id" Type="bigint" />
+    <Property Name="timeIN" Type="time" Precision="7" />
+    <Property Name="timeout" Type="time" Precision="7" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Employe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherFullName" Type="nvarchar" MaxLength="500" />
+    <Property Name="FatherCNIC" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dateofbirth" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Accomodation" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResidenceAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkEmail" Type="nvarchar" MaxLength="150" />
+    <Property Name="PersonalEmail" Type="nvarchar" MaxLength="150" />
+    <Property Name="HomeAddress1" Type="nvarchar" MaxLength="500" />
+    <Property Name="HomeAddress2" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmergencyContactName" Type="nvarchar" MaxLength="150" />
+    <Property Name="EmergencyRelation" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyHomePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyWorkPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="inserteddatetime" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="img_url" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="tbl_employee_conectivity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employe_fk" Type="bigint" />
+    <Property Name="Dept_fk" Type="bigint" />
+    <Property Name="SubDept_fk" Type="bigint" />
+    <Property Name="jobtitle_fk" Type="bigint" />
+    <Property Name="Joindate" Type="date" />
+    <Property Name="Confirmationdate" Type="date" />
+    <Property Name="grade_fk" Type="bigint" />
+    <Property Name="Supervisor_fk" Type="bigint" />
+    <Property Name="TerminationDate" Type="date" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid_fk" Type="bigint" />
+    <Property Name="fk_bank_details" Type="bigint" />
+    <Property Name="Emplyeestatus_fk" Type="bigint" />
+    <Property Name="ContractStartDate" Type="date" />
+    <Property Name="ContractEndDate" Type="date" />
+    <Property Name="inserteddatetime" Type="datetime" />
+    <Property Name="insertedby" Type="bigint" />
+    <Property Name="updatedatetime" Type="datetime" />
+    <Property Name="updateby" Type="bigint" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_employee_salary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_employee_id" Type="bigint" />
+    <Property Name="amount" Type="bigint" />
+    <Property Name="status" Type="bit" />
+    <Property Name="salary_component" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Employee_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_status_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Employee_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emp_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_employeeleave">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_empid" Type="bigint" />
+    <Property Name="fk_leavetypeid" Type="bigint" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_holiday">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="weekly" Type="int" />
+    <Property Name="yearly" Type="int" />
+    <Property Name="one_time" Type="int" />
+    <Property Name="holiday_day" Type="int" />
+    <Property Name="holiday_date" Type="date" />
+    <Property Name="grade_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_holidays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="weekly" Type="bit" />
+    <Property Name="yearly" Type="bit" />
+    <Property Name="one_time" Type="bit" />
+    <Property Name="holiday_day" Type="int" />
+    <Property Name="holiday_date" Type="date" />
+    <Property Name="grade_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_job_descrion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Job_description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="salary_range_min" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="salary_range_max" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_leave_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="leave_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="total_in_year" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_leaving_policy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Leavepolicy" Type="nvarchar" MaxLength="50" />
+    <Property Name="col_1" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="col_2" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="col_3" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="col_4" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="col_5" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="col_6" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="col_7" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Note" Type="nvarchar" MaxLength="250" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_loanpaidemp">
+    <Key>
+      <PropertyRef Name="loan_id" />
+    </Key>
+    <Property Name="loan_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" Nullable="false" />
+    <Property Name="loan_amount" Type="bigint" Nullable="false" />
+    <Property Name="payabletime_in_month" Type="int" Nullable="false" />
+    <Property Name="remaining_loan_amount" Type="int" Nullable="false" />
+    <Property Name="applied_from" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="char" MaxLength="10" />
+    <Property Name="payable_amount_per_month" Type="bigint" />
+    <Property Name="remaining_month_payable" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="User_type" Type="bigint" />
+    <Property Name="Desgination" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active_status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_noti">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="fk_userid" Type="bigint" />
+    <Property Name="noti_content" Type="varchar" MaxLength="150" />
+    <Property Name="del_status" Type="bit" />
+    <Property Name="read_status" Type="bit" />
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_salary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_emp_id" Type="bigint" Nullable="false" />
+    <Property Name="salary_month" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="salary_year" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="stat_bonus" Type="float" />
+    <Property Name="gross_earning_amount" Type="float" Nullable="false" />
+    <Property Name="gross_deduction_amount" Type="float" Nullable="false" />
+    <Property Name="net_pay" Type="float" Nullable="false" />
+    <Property Name="inserted_by" Type="bigint" Nullable="false" />
+    <Property Name="slip_url" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tbl_salary_components">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="salary_components" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_salary_detuction_policy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="late_detuction" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="absent_detuction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="fk_emp_grade" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_sub_dept">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sub_department_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_dept_id" Type="bigint" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_usertype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usertype" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'hrms.dbo.tbl_world_city' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbl_world_city">
+          <Property Name="id" Type="bigint" />
+          <Property Name="world_city_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_country_id" Type="bigint" />
+        </EntityType>-->
+  <EntityType Name="tbl_world_country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="country_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__tbl_emplo__fk_em__6FE99F9F">
+    <End Role="tbl_Employe" Type="Self.tbl_Employe" Multiplicity="0..1" />
+    <End Role="tbl_employee_salary" Type="Self.tbl_employee_salary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Employe">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_employee_salary">
+        <PropertyRef Name="fk_employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_loanp__emp_i__49C3F6B7">
+    <End Role="tbl_Employe" Type="Self.tbl_Employe" Multiplicity="1" />
+    <End Role="tbl_loanpaidemp" Type="Self.tbl_loanpaidemp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Employe">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_loanpaidemp">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_login_tbl_usertype">
+    <End Role="tbl_usertype" Type="Self.tbl_usertype" Multiplicity="0..1" />
+    <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usertype">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_login">
+        <PropertyRef Name="User_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_Employe_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="HRMSModelStoreContainer">
+    <EntitySet Name="tbl_dept" EntityType="Self.tbl_dept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Document" EntityType="Self.tbl_Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_email_server" EntityType="Self.tbl_email_server" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_emp_attendance" EntityType="Self.tbl_emp_attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_emp_grade" EntityType="Self.tbl_emp_grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_emp_holiday" EntityType="Self.tbl_emp_holiday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_emp_time_set" EntityType="Self.tbl_emp_time_set" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Employe" EntityType="Self.tbl_Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee_conectivity" EntityType="Self.tbl_employee_conectivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee_salary" EntityType="Self.tbl_employee_salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Employee_status" EntityType="Self.tbl_Employee_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Employee_type" EntityType="Self.tbl_Employee_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employeeleave" EntityType="Self.tbl_employeeleave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_holiday" EntityType="Self.tbl_holiday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_holidays" EntityType="Self.tbl_holidays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_job_descrion" EntityType="Self.tbl_job_descrion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_leave_type" EntityType="Self.tbl_leave_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_leaving_policy" EntityType="Self.tbl_leaving_policy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_loanpaidemp" EntityType="Self.tbl_loanpaidemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_login" EntityType="Self.tbl_login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_noti" EntityType="Self.tbl_noti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_salary" EntityType="Self.tbl_salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_salary_components" EntityType="Self.tbl_salary_components" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_salary_detuction_policy" EntityType="Self.tbl_salary_detuction_policy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sub_dept" EntityType="Self.tbl_sub_dept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_usertype" EntityType="Self.tbl_usertype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_world_country" EntityType="Self.tbl_world_country" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tbl_emplo__fk_em__6FE99F9F" Association="Self.FK__tbl_emplo__fk_em__6FE99F9F">
+      <End Role="tbl_Employe" EntitySet="tbl_Employe" />
+      <End Role="tbl_employee_salary" EntitySet="tbl_employee_salary" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_loanp__emp_i__49C3F6B7" Association="Self.FK__tbl_loanp__emp_i__49C3F6B7">
+      <End Role="tbl_Employe" EntitySet="tbl_Employe" />
+      <End Role="tbl_loanpaidemp" EntitySet="tbl_loanpaidemp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_login_tbl_usertype" Association="Self.FK_tbl_login_tbl_usertype">
+      <End Role="tbl_usertype" EntitySet="tbl_usertype" />
+      <End Role="tbl_login" EntitySet="tbl_login" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
