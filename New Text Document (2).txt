@@ -1,0 +1,57 @@
+employee column
+	add emp_grade id
+
+
+emp grade add
+leave_policy
+salary deduction policy column
+late deduction policy column
+allowance
+
+
+
+employee leaves
+
+id
+empid
+leave id
+
+
+Loan paid employee
+loan id
+emp id
+loan amount
+per month payable loan amount/payable time in month
+payable time in month
+remaining loan amount
+applied from
+if reamining loan amount is 0 set status expired
+
+
+
+
+salary
+id
+empid
+salary month
+salary amount
+leave deduction 
+	check leave in attandance add if leave exceed 
+	check employee id in grade with extract leave deduction ammount
+late deduction 
+	check late in attandance column total column late of respected month 
+	check employee id in grade with extract leave deduction ammount
+loan deduction
+	check employee id in loan extract per month payable if loan status active loan deduction ammount 
+allowance
+bonus
+
+
+
+late deduction policy
+exceed 15 minute
+
+
+
+
+

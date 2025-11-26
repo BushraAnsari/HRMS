@@ -1,0 +1,67 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="addbasicsalary.aspx.cs" Inherits="HRMS.addbasicsalary" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.core.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Add Loan Paid Employee</b></h4>
+                <br />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Employee Code</label>
+
+                            <asp:DropDownList ID="ddlempid" class="form-control" runat="server" OnSelectedIndexChanged="ddlempcode_SelectedIndexChanged"></asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group" id="form1" runnat="server">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Total Salary</label>
+                            <br />
+                            <asp:TextBox ID="amount" class="form-control" TextMode="number" runat="server" OnTextChanged="amount_TextChanged" ReadOnly="true" /> </asp:TextBox>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <br />
+                            <asp:Button ID="btnsave" name="ctl00$ContentPlaceHolder1$Save" runat="server" CssClass="btn btn btn-custom" Width="100px" Text="Save" OnClick="Btnsave_Click" />
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</asp:Content>
